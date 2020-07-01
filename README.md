@@ -1,11 +1,14 @@
-# Exemple-
- Search a list using javascript with or without accent with uppercase or lowercase letters, show result in popup
+# Looking in a list
 
- ['Luísa brown', 'luisa red']
+ Using javascript with or without accent with uppercase or lowercase letters, show result in popup
+
+# Exemple
+
+ ["Luísa brown", "luisa red"]
  
- if searh for "LUISA" or "luisa"
+ if we look for "LUISA" or "luisa"
 
- result:
+ Result:
 
  "Luísa brown" and "luisa red"
 
