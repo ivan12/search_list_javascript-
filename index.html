@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom fonts for this template -->
+      <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+      <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+      <link href="css/keyboard.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/landing-page.min.css" rel="stylesheet">
+   </head>
+   <body>
+      <!-- Masthead -->
+        <div class="masthead text-white text-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                  <div class="col-xl-9 mx-auto">
+                      <h5 class="subtitle">PUT NAME FOR SEARCH</h5>
+                  </div>
+                  <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mb-5">
+                      <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0" id="wrap">
+                              <input type="text" class="form-control form-control-lg" id="name" placeholder="Ex: Luísa or luisa or LUISA">
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <button onclick="pesquisar()" type="button" class="btn btn-block btn-lg btn-primary">Search</button>
+                            </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                <div class="row"> 
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Active</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Ivan</td>
+                        <td>Amorim</td>
+                        <td>[x]</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Luísa</td>
+                        <td>Pereira</td>
+                        <td>[x]</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Bruna</td>
+                        <td>Teixeira</td>
+                        <td>[x]</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Bruna</td>
+                        <td>Silva</td>
+                        <td>[x]</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Luisa</td>
+                        <td>Brow</td>
+                        <td>[x]</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="footerPesquisa">
+              <div class="row">
+                <div class="col-lg-12 h-100 text-center text-lg-center my-auto">
+                  <ul class="list-inline mb-2">
+                    <li class="list-inline-item">
+                      <a href="#">Dev Ivan Amorim</a>
+                    </li>
+                  </ul>
+                  <p class="text-muted small mb-4 mb-lg-0"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+
+      <div class="modal fade" id="opcoesNomes">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">More than one result found!</h4>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+              <div id="listNomesContent">Loading...</div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modalSemResultados">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">search result</h4>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+              <div>No results for this search!</div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bootstrap core JavaScript -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.keyboard.extension-typing.js"></script>
+      <script src="js/jquery.keyboard.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   </body>
+</html>
+
+<script>
+  var listaNomeServidores = [
+  "Ivan Amorim", "Luísa Pereira", "Bruna Teixeira", "Bruna Silva", "Luisa Brow"];
+
+  function motorDeBusca() {
+      var listaResultados = []
+      // procura se tem o nome digitado na lista de servidores
+      for (var i=0; i< listaNomeServidores.length; i++) {
+          if(retiraAcentos(listaNomeServidores[i]).toLowerCase().search(retiraAcentos(document.getElementById("name").value).toLowerCase()) >= 0 ) {
+              listaResultados.push(listaNomeServidores[i])
+          }
+      }
+      // montar os links com os nomes encontrados
+      console.log('listaResultados = ', listaResultados)
+      if (listaResultados.length > 0 ) {
+        $('#opcoesNomes').modal('show');
+        document.getElementById("listNomesContent").innerHTML = "Loading..."
+        setTimeout(function(){
+          setArrayContent(listaResultados)
+        }, 3000);
+        
+      } else {
+        $('#modalSemResultados').modal('show');
+        /*if (listaResultados.length == 1) {
+          console.log('redirecionando para... ', listaResultados[0])
+          location.replace('./'+ listaResultados[0]+'.html');
+          return false;
+        } else {
+          $('#modalSemResultados').modal('show');
+        }*/
+      }
+  }
+
+  function retiraAcentos(str) {
+    com_acento = "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝŔÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿŕ";
+    sem_acento = "AAAAAAACEEEEIIIIDNOOOOOOUUUUYRsBaaaaaaaceeeeiiiionoooooouuuuybyr";
+    novastr="";
+    for(i=0; i<str.length; i++) {
+      troca=false;
+      for (a=0; a<com_acento.length; a++) {
+        if (str.substr(i,1)==com_acento.substr(a,1)) {
+          novastr+=sem_acento.substr(a,1);
+          troca=true;
+          break;
+        }
+      }
+      if (troca==false) {
+        novastr+=str.substr(i,1);
+      }
+    }
+	  return novastr;
+  }		
+
+  function setArrayContent(listaResultados) {
+      document.getElementById("listNomesContent").innerHTML = "Names Found:"
+      
+      for(var i=0; i < listaResultados.length; i++) {
+        document.getElementById("listNomesContent").innerHTML += '<br><span class="linkBlue">' + listaResultados[i] + '</span>';
+      }
+  }
+
+  function pesquisar() {
+      motorDeBusca();
+  }
+
+  $('#nomeServidor').keyboard({
+    layout: 'qwerty',
+    css: {
+        input: 'form-control input-sm',
+        container: 'center-block dropdown-menu', // jumbotron
+        buttonDefault: 'btn btn-default',
+        buttonHover: 'btn-primary',
+        buttonAction: 'active',
+        buttonDisabled: 'disabled'
+    }
+})
+// activate the typing extension
+.addTyping({
+    showTyping: true,
+    delay: 50
+});
+</script>

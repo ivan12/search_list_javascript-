@@ -1,0 +1,217 @@
+/*!
+ * Start Bootstrap - Landing Page v5.0.7 (https://startbootstrap.com/template-overviews/landing-page)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+
+ body {
+	font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.masthead {
+	position: relative;
+	color: #000 !important;
+    width: 100%;
+    height: 100%;
+	background-size: cover;
+	z-index: 2;
+}
+
+.subtitle {
+	margin-bottom: 20px;
+}
+
+.masthead h1 {
+	font-size: 2rem
+}
+
+@media (min-width:768px) {
+	.masthead {
+		padding-top: 18rem;
+    	padding-bottom: 0rem;
+	}
+	.masthead h1 {
+		font-size: 3rem
+	}
+}
+
+.showcase .showcase-text {
+	padding: 3rem
+}
+
+.showcase .showcase-img {
+	min-height: 30rem;
+	background-size: cover
+}
+
+@media (min-width:768px) {
+	.showcase .showcase-text {
+		padding: 7rem
+	}
+}
+
+.features-icons {
+	padding-top: 7rem;
+	padding-bottom: 7rem
+}
+
+.features-icons .features-icons-item {
+	max-width: 20rem
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+	height: 7rem
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+	font-size: 4.5rem
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+	font-size: 5rem
+}
+
+.testimonials {
+	padding-top: 7rem;
+	padding-bottom: 7rem
+}
+
+.testimonials .testimonial-item {
+	max-width: 18rem
+}
+
+.testimonials .testimonial-item img {
+	max-width: 12rem;
+	box-shadow: 0 5px 5px 0 #adb5bd
+}
+
+.call-to-action {
+	position: relative;
+	background-color: #343a40;
+	background: url(../img/bg-masthead.jpg) no-repeat center center;
+	background-size: cover;
+	padding-top: 7rem;
+	padding-bottom: 7rem
+}
+
+.call-to-action .overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: .3
+}
+
+footer.footer {
+    padding-top: 0rem;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    height: 55px;
+	background-color: transparent !important;
+}
+
+.footerPesquisa {
+	margin-top: 5.99rem;
+    height: 55px;
+    background-color: transparent !important;
+}
+
+.footerPesquisa a {
+	color: white !important;
+}
+
+.bg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #28a745 !important;
+    border-color: #155724 !important;
+}
+
+.logo {
+    margin-left: 62%;
+    height: 25% !important;
+    width: 21% !important;
+}
+
+
+/* TECLADO VIRTUAL */
+/* 240 x 320 (small phone)  */
+@media all and (max-width: 319px) {
+	.ui-keyboard .ui-keyboard-button { font-size: 9px; }
+	.ui-keyboard .ui-keyboard-input { font-size: 12px; }
+}
+
+/* 320 x 480 (iPhone)  */
+@media all and (min-width: 320px) and (max-width: 479px) {
+	.ui-keyboard .ui-keyboard-button { font-size: 9px; }
+	.ui-keyboard .ui-keyboard-input { font-size: 14px; }
+}
+
+/* 480 x 640 (small tablet) */
+@media all and (min-width: 480px) and (max-width: 767px) {
+	.ui-keyboard .ui-keyboard-button { font-size: 13px; }
+	.ui-keyboard .ui-keyboard-input { font-size: 14px; }
+}
+
+#wrap {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+
+a {
+	color: #000 !important;
+    text-decoration: none !important;
+    font-size: smaller !important;
+}
+
+.gradient {
+    height: 23px;
+    background-color: red;
+    background-image: linear-gradient(to right, red, orange, orange, green, orange, orange, red);
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff !important;
+}
+
+.box {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+  }
+
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: lighter !important;
+    line-height: 1.2;
+}
+
+.linkBlue {
+	color: blue !important;
+    font-weight: bold;
+}
